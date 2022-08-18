@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "ajax-client": "^3.0.3",
+    "axios": "^0.27.2",
+    "iconv-lite": "^0.6.3",
+    "jquery": "^3.6.0",
+    "jsdom": "^20.0.0",
+    "node-fetch": "^2.6.7",
+    "puppeteer": "^16.1.1",
+    "puppeteer-table-parser": "^1.7.0",
+    "qs": "^6.11.0",
+    "request": "^2.88.2",
+    "tabletojson": "^2.0.7",
+    "xhr2": "^0.2.1"
+  }
+}
