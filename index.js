@@ -19,9 +19,7 @@ app.get("/", async (req, res) => {
 app.get("/school-search", async (req, res) => {
     res.contentType("json");
     const school_name = req.query.q?.toString() ?? "";
-    new TextEncoder();
     const request_path = "/" + await getSchoolSearchKey() + euckr.euckrEncode(school_name)
-    // console.log(request_path);
     http.get(
         {
             host: "comci.kr",
@@ -41,5 +39,5 @@ app.get("/school-search", async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log("Hello World!");
+    console.log("Hello World!")
 })
