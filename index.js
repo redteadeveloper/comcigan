@@ -16,9 +16,9 @@ app.get("/", async (req, res) => {
     res.send("Hello World!");
 });
 
-app.get("/search", async (req, res) => {
+app.get("/school-search", async (req, res) => {
     res.contentType("json");
-    const school_name = req.query.school?.toString() ?? "";
+    const school_name = req.query.q?.toString() ?? "";
     new TextEncoder();
     const request_path = "/" + await getSchoolSearchKey() + euckr.euckrEncode(school_name)
     // console.log(request_path);
@@ -31,7 +31,7 @@ app.get("/search", async (req, res) => {
         },
         (api_result) => {
             api_result.on("data", (d) => {
-                res.write(d.toString().replace(/\0/g, ""));
+                res.write(JSON.stringify((JSON.parse(d.toString().replace(/\0/g, "")).학교검색)));
             });
             api_result.on("close", () => {
                 res.send();
